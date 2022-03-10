@@ -1,0 +1,70 @@
+{% extends 'layouts/contact.html.twig' %}
+
+{% block title %}Contact
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	<style></style>
+{% endblock %}
+{% block page_content %}
+	{{parent()}}
+
+	<div class="item col-sm-10 col-sm-offset-1">
+
+		<div class="form_company">
+			{{ form_start(form_company) }}
+			<h3><img src="{{ asset('assets/img/icone.png') }}" alt="">
+				Ajouter un contact Entreprise</h3><br>
+			{% for message in app.flashes('error')%}
+				<div class="alert alert-danger">
+					{{ message }}
+				</div>
+			{% endfor %}
+			<div class="form-group">
+				<label for="inputName">Nom de l'entreprise</label><br>
+				{{ form_widget(form_company.name, {'attr': {'class': 'form-control'}}) }}
+			</div>
+			<div class="form-row">
+
+				<div class="form-group col">
+					<label for="inputEmail4">Email</label><br>
+					{{ form_widget(form_company.email, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="form-group col">
+					<label for="inputphone4">Téléphone
+					</label><br>
+					{{ form_widget(form_company.phone_number, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+			<div class="form-row">
+
+				<div class="form-group col">
+					<label for="inputsiret_number4">Numero siret</label><br>
+					{{ form_widget(form_company.siren_number, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress">Address</label><br>
+				{{ form_widget(form_company.adress, {'attr': {'class': 'form-control'}}) }}
+			</div>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="inputCity">Ville</label><br>
+					{{ form_widget(form_company.city, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="form-group col">
+					<label for="inputState">Code postal</label><br>
+					{{ form_widget(form_company.postcode, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+
+			<button type="submit" class="btn mb-5">Ajouter
+			</button>
+			{{ form_end(form_company) }}
+		</div>
+
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script></script>
+{% endblock %}

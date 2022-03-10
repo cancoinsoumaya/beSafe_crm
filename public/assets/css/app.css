@@ -1,0 +1,144 @@
+
+body{
+    font-family: 'Merriweather', serif;
+    width: 100%;
+    background: #EFEFEF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    
+}
+form{
+  
+    position: relative;
+    z-index: 1;
+    background: #061F43;
+    max-width: 500px;
+    margin:20px auto ;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color:black;
+
+}
+form h2{
+    color: white;
+}
+form input{
+
+    font-family: 'Merriweather', serif;
+    outline: 0;
+    /* color:black; */
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.register-form button {
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:#FBCE70;
+    width: 100%;
+    border: 0;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+form label {
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    color: white;
+    margin: 10px;
+}
+/* ............................list user ........................................*/
+.container-list{
+    width: 80%;
+}
+.container-list .btn{
+    
+    outline: 0;
+    background:#FBCE70;
+
+    border: 0;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    
+}
+/* ...............................Profil page..................................... */
+.container-profil{
+    color: #061C3E;
+   
+}
+.container-profil button{
+
+    outline: 0;
+    background:#FBCE70;
+
+    border: 0;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.item{
+    background-color: #EFEFEF;
+}
+.item form {
+    position: relative;
+    z-index: 1;
+    background: #061F43;
+    max-width: 70%;
+    margin:1px auto ;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    /* color:white; */
+
+}
+.item label{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.item button{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:#FBCE70;
+    width: 70%;
+    border: 0;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.item h3{
+    color:white;
+    font-size: 20px;
+
+}
+.foo{
+    width: 100px;
+}
+.item .alert {
+    color: red;
+}

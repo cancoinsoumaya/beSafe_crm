@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User
+{% endblock %}
+
+{% block body %}
+	<h1>Modifier le collaborateur</h1>
+
+	{{ include('profil/_form.html.twig') }}
+
+	<a href="{{ path('admin_index') }}">back to list</a>
+{% endblock %}

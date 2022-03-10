@@ -1,0 +1,46 @@
+{% extends 'layouts/appUser.html.twig' %}
+
+{% block title %}user List
+{% endblock %}
+
+{% block page_content %}
+
+	<div class="container-list overflow-auto">
+		<h1>listes des collaborateurs
+		</h1>
+		{% for message in app.flashes('success')%}
+			<div class="alert alert-danger">
+				{{ message }}
+			</div>
+		{% endfor %}
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in users %}
+					<tr>
+						<td>{{ user.id }}</td>
+						<td>{{ user.email }}</td>
+						<td>{{ user.password }}</td>
+						<td>
+
+							<a href="{{ path('admin_index_edit', {'id': user.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="5">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<a class=" btn button" href="{{ path('app_register') }}">Create new</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends 'layouts/appUser.html.twig' %}
+
+{% block title %}Dashboard
+{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<style>
+		body {
+			font-family: 'Merriweather', serif;
+			width: 100%;
+			background: #EFEFEF;
+			font-family: 'Poppins', sans-serif;
+			font-size: 12px;
+		}
+		.container-contact {
+			background-color: white;
+			border-radius: 25px 25px 0 0;
+		}
+		.col-contact {
+			background-color: #EDEDED;
+			width: 45px;
+			margin: 5px;
+		}
+		.rowcolor {
+			background-color: #FBCE70;
+		}
+		.container-right {
+			background-color: #061D3F;
+			color: white;
+			padding: 5px;
+			border-radius: 25px;
+			margin: 20px 10px;
+		}
+		.col-user {
+			background-color: white;
+			width: 15px;
+			margin: 3px;
+
+		}
+		.container-user {
+			border-radius: 25px;
+			color: #061D3F;
+		}
+	</style>
+{% endblock %}
+
+{% block page_content %}
+	{{parent()}}
+	<div class="container-dashboard">
+
+		<div class="row ">
+			<div class="col-8">
+				<div class="container-left">
+					<div class="row overflow-scroll container-contact m-5 p-2 text-center">
+						<h1><img src="{{ asset('assets/img/icone.png') }}" alt="">
+							Ma liste de contact
+						</h1>
+						{% for companyContact in companyContacts %}
+							<div class="col col-contact border-0 shadow p-3 mb-5  rounded">
+								<h5>{{companyContact.name}}</h5>
+								{% if companyContact %}
+									<h5>Entreprise
+									</h5>
+								{% endif %}
+								<h5>{{companyContact.phoneNumber}}
+								</h5>
+								<h5>
+									<a href="{{ path('app_contact') }}" class="link-warning">Plus d'infos</a>
+								</h5>
+							</div>
+						{% endfor %}
+
+					</div>
+					<div class="row overflow-scroll container-contact m-5 p-2 ">
+						<div class="text-center">
+							<h1><img src="{{ asset('assets/img/icone.png') }}" alt="">
+								Mon planning
+							</h1>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">Evènement
+										</th>
+										<th scope="col">Heur et date</th>
+										<th scope="col">Status</th>
+										<th scope="col">Participant
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+
+										{% for event in events %}
+											<th scope="row" class="rowcolor" style="background-color: #FBCE70;"></th>
+											<td>{{event.title}}</td>
+											<td>De
+												{{ event.start|date('d-m-y H:i:s') }}
+												à
+												{{ event.end|date('d-m-y H:i:s') }}</td>
+											<td>a venir</td>
+											{% for user in users %}
+												<td>{{user.firstname}}</td>
+											{% endfor %}
+										</tr>
+									{% endfor %}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="container-right text-center ">
+					<h1><img src="{{ asset('assets/img/icone.png') }}" alt="">
+						Mes équipes
+					</h1>
+					<div class="row overflow-scroll bg-light container-user m-5 p-2 text-center">
+
+						<h5>Equipe 1</h5>
+						<div class="col col-user border  p-3 mb-5  rounded">
+							<img src="" alt="">
+							<p>Nom Prenom</p>
+							<h8>poste
+							</h8>
+						</div>
+						<div class="col col-user border p-3 mb-5 rounded">
+							<img src="" alt="">
+							<p>Nom Prenom</p>
+							<h8>poste
+							</h8>
+						</div>
+
+						<div class="col col-user border  p-3 mb-5 rounded">
+							<img src="" alt="">
+							<p>Nom Prenom</p>
+							<h8>poste
+							</h8>
+						</div>
+					</div>
+
+
+					<div class="row overflow-scroll bg-light container-user m-5 p-2 text-center">
+
+						<h5>Equipe 2</h5>
+						<div class="col col-user border  p-3 mb-5  rounded">
+							<img src="" alt="">
+							<p>Nom Prenom</p>
+							<h8>poste
+							</h8>
+						</div>
+						<div class="col col-user border p-3 mb-5 rounded">
+							<img src="" alt="">
+							<p>Nom Prenom</p>
+							<h8>poste
+							</h8>
+						</div>
+
+						<div class="col col-user border p-3 mb-5 rounded">
+							<img src="" alt="">
+							<p>Nom Prenom</p>
+							<h8>poste
+							</h8>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layouts/appUser.html.twig' %}
+
+{% block title %}Edit User
+{% endblock %}
+
+{% block page_content %}
+	<h1>Edit User</h1>
+	{{parent()}}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<div class="register-form">
+
+
+		<h2>Modifier un collaborateur</h2>
+		{{ form_widget(form.name ) }}
+		{{ form_widget(form.last_name) }}
+
+		{{ form_widget(form.email) }}
+		{{ form_widget(form.phone) }}
+		{{ form_widget(form.title) }}
+		{{ form_widget(form.picture, {
+            label: "Ajouter la photo de profil de l'utilisateur"
+        }) }}
+
+		{{ include('profil/_form.html.twig', {'button_label': 'Update'}) }}
+
+		<a href="{{ path('admin_index') }}">Retour a la page profil</a>
+
+
+	{% endblock %}

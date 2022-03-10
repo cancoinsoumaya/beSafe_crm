@@ -1,0 +1,281 @@
+{% extends 'layouts/contact.html.twig' %}
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
+{% endblock %}
+{% block title %}Contact
+{% endblock %}
+{% block page_content %}
+	{{parent()}}
+	<div class="container-list">
+		<h2>Liste des contacts</h2>
+
+
+		<ul class="nav nav-tabs mt-5">
+			<li class="active">
+				<a data-toggle="tab" href="#home">Entreprise</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#menu1">Particulier</a>
+			</li>
+
+		</ul>
+
+		<div class="tab-content mt-2">
+			<div id="home" class="tab-pane fade in active">
+				<div class="container_list_company">
+					<div class="row">
+						<div class="col-md-offset-1 col-md-10">
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col col-sm-3 col-xs-12">
+											<a class="btn btn-default" href="{{path('contact_company')}}">
+												Ajouter un contact
+											</a>
+										</div>
+										<div class="col-sm-9 col-xs-12 text-right">
+											<button type="button" class="btn rounded-pill " data-toggle="modal" data-target="#exampleModal" style="background-color:#FBCE70">
+												Rechercher</button>
+										</div>
+									</div>
+								</div>
+								<div class="panel-body table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Nom entreprise
+												</th>
+												<th>Nombre de siren</th>
+												<th>Téléphone</th>
+												<th>Email</th>
+												<th>Adress</th>
+												<th>code postale
+												</th>
+												<th>ville</th>
+												<th></th>
+
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												{% for companyContact in companyContacts %}
+													<td>2</td>
+													<td>{{ companyContact.name}}</td>
+													<td>{{ companyContact.sirenNumber}}</td>
+													<td>{{ companyContact.phoneNumber}}</td>
+													<td>{{ companyContact.email}}</td>
+													<td>{{ companyContact.adress}}</td>
+													<td>{{ companyContact.postcode}}</td>
+													<td>{{ companyContact.city}}</td>
+
+
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+								<div class="panel-footer">
+									<div class="row">
+										<div class="col col-sm-6 col-xs-6">showing
+											<b>5</b>
+											out of
+											<b>25</b>
+											entries</div>
+										<div class="col-sm-6 col-xs-6">
+											<ul class="pagination hidden-xs pull-right">
+												<li>
+													<a href="#"></a>
+												</li>
+												<li class="active">
+													<a href="#">1</a>
+												</li>
+												<li>
+													<a href="#">2</a>
+												</li>
+												<li>
+													<a href="#">3</a>
+												</li>
+												<li>
+													<a href="#">4</a>
+												</li>
+												<li>
+													<a href="#">5</a>
+												</li>
+												<li>
+													<a href="#">></a>
+												</li>
+											</ul>
+											<ul class="pagination visible-xs pull-right">
+												<li>
+													<a href="#"></a>
+												</li>
+												<li>
+													<a href="#"></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="menu1" class="tab-pane fade">
+				<div class="container_list_company">
+					<div class="row">
+						<div class="col-md-offset-1 col-md-10">
+							<div class="panel">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col col-sm-3 col-xs-12">
+											<a class="btn btn-default" href="{{path('contact_individual')}}">
+												Ajouter un contact
+											</a>
+										</div>
+										<div class="col-sm-9 col-xs-12 text-right">
+											<div class="btn_group">
+												<input type="text" class="form-control" placeholder="Search">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel-body table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Nom
+												</th>
+												<th>Prenom</th>
+												<th>titre</th>
+												<th>Téléphone</th>
+												<th>Email</th>
+												<th>type de contact</th>
+												<th></th>
+
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												{% for indevidualContact in indevidualContacts %}
+													<td>2</td>
+													<td>{{ indevidualContact.firstName}}</td>
+													<td>{{ indevidualContact.lastName}}</td>
+													<td>{{ indevidualContact.role}}</td>
+
+													<td>{{ indevidualContact.phoneNumber}}</td>
+													<td>{{ indevidualContact.email}}</td>
+													<td></td>
+													<td></td>
+
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+								<div class="panel-footer">
+									<div class="row">
+										<div class="col col-sm-6 col-xs-6">showing
+											<b>5</b>
+											Par page
+											<b>25</b>
+											pages</div>
+										<div class="col-sm-6 col-xs-6">
+											<ul class="pagination hidden-xs pull-right">
+												<li>
+													<a href="#"></a>
+												</li>
+												<li class="active">
+													<a href="#">1</a>
+												</li>
+												<li>
+													<a href="#">2</a>
+												</li>
+												<li>
+													<a href="#">3</a>
+												</li>
+												<li>
+													<a href="#">4</a>
+												</li>
+												<li>
+													<a href="#">5</a>
+												</li>
+												<li>
+													<a href="#"></a>
+												</li>
+											</ul>
+											<ul class="pagination visible-xs pull-right">
+												<li>
+													<a href="#"></a>
+												</li>
+												<li>
+													<a href="#"></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Faire une recherche</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					{% form_theme searchForm 'bootstrap_4_layout.html.twig' %}
+					{{ form_start(searchForm) }}
+					{{ form_row(searchForm.name, {'label': 'La recherche s\'effectue sur le titre de l\'article', 'id': 'search-titre', 'attr': {'placeholder': 'Entrez un mot clé', 'class': 'form-control'}}) }}
+					<button class="btn btn-info">Rechercher</button>
+					{{ form_end(searchForm) }}
+				</div>
+
+				{% if app.request.method == 'POST' %}
+					<div id="result-search" class="mt-5">
+						{% if companyContactsRe | length == 0 %}
+							<h4>Aucun résulat pour votre recherche
+								<i class="fas fa-sad-tear"></i>
+							</h4>
+						{% else %}
+							<h3 class="mt-3">Résulats de votre recherche :</h3>
+
+							{% for companyContactRe in companyContactsRe %}
+								<div class="mt-3 py-3 px-3">
+									<a href="{{ path('app_contact') }}">
+										<h4 class="font-weight-bold text-dark">{{ companyContactRe.name }}</h4>
+									</a>
+
+								</div>
+							{% endfor %}
+
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}{% block javascripts %}
+{{parent()}}{% endblock %}

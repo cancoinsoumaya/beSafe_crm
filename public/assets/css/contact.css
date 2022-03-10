@@ -1,0 +1,114 @@
+body{
+    font-family: 'Merriweather', serif;
+    width: 100%;
+    background: #EFEFEF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    
+}
+.form_company{
+    position: relative;
+    z-index: 1;
+    background: #061F43;
+    max-width: 500px;
+    margin:20px auto ;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color:white;
+}
+.form_individual{
+  
+    position: relative;
+    z-index: 1;
+    background: #061F43;
+    max-width: 500px;
+    margin:20px auto ;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color:white;
+
+}
+form input{
+
+    font-family: 'Merriweather', serif;
+    outline: 0;
+    
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.form_company button {
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:#FBCE70;
+    width: 100%;
+    border: 0;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+.form_individual button {
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:#FBCE70;
+    width: 100%;
+    border: 0;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+/* ...........................contact list page........................  */
+.container-list{
+     
+    position: relative;
+    z-index: 1;
+    background: white;
+    max-width: 90%;
+    margin:20px auto ;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color:#061C3E;
+}
+.form_contact{
+
+    position: relative;
+    z-index: 1;
+    background: #061F43;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    color:white;
+
+}
+.form_contact button{
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:#FBCE70;
+    border: 0;
+    margin: 6px;
+    padding: 15px;
+    border-radius: 25px;
+    color: #061C3E;
+    font-size: 10px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}

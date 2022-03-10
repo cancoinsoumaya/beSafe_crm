@@ -1,0 +1,47 @@
+{% extends 'layouts/appUser.html.twig' %}
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+{% endblock %}
+{% block title %}Ajouter un utilisateur
+{% endblock %}
+
+{% block page_content %}
+	{{parent()}}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<div
+		class="register-form">
+
+		{# the symfony form #}
+		{{ form_start(registrationForm) }}
+		<h2><img src="{{ asset('assets/img/icone.png') }}" alt="">
+			Ajouter un collaborateur</h2>
+		{{ form_row(registrationForm.name , {
+            label: 'Prenom'
+        }) }}
+		{{ form_row(registrationForm.last_name, {
+            label: 'Nom'
+        }) }}
+
+		{{ form_row(registrationForm.email , {
+            label: 'Email'
+        }) }}
+		{{ form_row(registrationForm.phone, {
+            label: 'Téléphone'
+        }) }}
+		{{ form_row(registrationForm.title, {
+            label: 'Titre'
+        }) }}
+		{{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+		{{ form_row(registrationForm.picture, {
+            label: "Ajouter la photo de profil de l'utilisateur"
+        }) }}
+
+		<button type="submit" class="btn">Valider</button>
+		{{ form_end(registrationForm) }}
+	</div>
+{% endblock %}
